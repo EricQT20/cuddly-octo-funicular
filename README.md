@@ -64,3 +64,45 @@
   </footer>
 </body>
 </html>
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 80px;
+  margin: 5px;
+}
+
+main {
+  padding: 20px;
+}
+
+ul#consulta-lista {
+  list-style: none;
+  padding: 0;
+}
+
+ul#consulta-lista li {
+  padding: 10px;
+  background-color: #1f1f1f;
+  margin: 8px 0;
+  border-radius: 8px;
+  border-left: 5px solid #00acc1;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #1a1a1a;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
