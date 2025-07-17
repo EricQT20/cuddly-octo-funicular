@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Plataforma de Consultas Institucionales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #00264d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            height: 50px;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+        main {
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #25d366;
+            color: white;
+            padding: 15px;
+            border: none;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Logo_Reniec_Per%C3%BA.svg/2560px-Logo_Reniec_Per%C3%BA.svg.png" alt="RENIEC" height="40">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/PNP_Peru.png" alt="PNP" height="40">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Logo_MINEDU_Per%C3%BA.png/800px-Logo_MINEDU_Per%C3%BA.png" alt="MINEDU" height="40">
+        <h1>Plataforma de Consultas Institucionales</h1>
+        <p>Reniec – Policía Nacional – MINEDU</p>
+    </header>
+    <main>
+        <form id="consultaForm">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="tipo">Tipo de consulta:</label>
+            <select id="tipo" name="tipo">
+                <option>FICHA RENIEC</option>
+                <option>DNI VIRTUAL</option>
+                <option>ARBOL GENEALOGICO</option>
+                <option>TITULARES DE LINEA</option>
+                <option>CERTIFICADO DE NACIDO VIVO</option>
+                <option>ANTECEDENTES POLICIALES</option>
+                <option>ANTECEDENTES JUDICIALES</option>
+                <option>ANTECEDENTES PENALES</option>
+                <option>ACTA DE NACIMIENTO</option>
+                <option>ACTA DE DIFUNCION</option>
+                <option>REPORTE INFOCORP</option>
+                <option>COPIA LITERAL SUNARP</option>
+                <option>OPSITEL LINEAS TITULARES</option>
+                <option>MIGRACIONES HISTORIAL</option>
+                <option>FISCALÍA-PROCESOS</option>
+                <option>POLICÍA NACIONA DEL PERU</option>
+                <option>RENADESPPLE-SENTENCIAS</option>
+                <option>POLICÍA-DENUNCIAS-ACTAS</option>
+                <option>REQUISITORIAS - DETENCIONES</option>
+                <option>DIRECCIONES</option>
+                <option>EMPRESAS CARGOS</option>
+                <option>CONYUGES PAREJAS</option>
+                <option>DONDE TRABAJA</option>
+                <option>SUELDO-CUENTO GANA</option>
+                <option>PROPIEDADES-SUNARP</option>
+                <option>DONDE ESTUDIA</option>
+                <option>CONSULTA MTC</option>
+                <option>BUSQUEDA POR FOTO</option>
+                <option>CONSULTA SUNAT</option>
+                <option>CONSULTA VEHICULAR</option>
+                <option>SISFOH INTEGRANTES</option>
+                <option>MULTAS ELECTORALES</option>
+                <option>NUMEROS DE TELEFONO</option>
+                <option>CORREOS ELECTRÓNICOS</option>
+                <option>INFORMACION FINANCIERA</option>
+                <option>CONSULTA SUNEDU MINEDU</option>
+                <option>CONSULTA SUCAMEC</option>
+                <option>CONSULTA PAPELETAS</option>
+            </select>
+
+            <label for="mensaje">Mensaje o consulta:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+            <button type="button" onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+        </form>
+    </main>
+    <footer>
+        Plataforma informática de identidad confidencial – Atendido por PNP
+    </footer>
+
+    <script>
+        function enviarWhatsApp() {
+            var nombre = document.getElementById("nombre").value;
+            var tipo = document.getElementById("tipo").value;
+            var mensaje = document.getElementById("mensaje").value;
+            var texto = "Consulta institucional:\nNombre: " + nombre + "\nTipo: " + tipo + "\nMensaje: " + mensaje;
+            var url = "https://wa.me/51920493365?text=" + encodeURIComponent(texto);
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+</html>
